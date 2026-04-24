@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { User, Mail, Lock, ArrowLeft } from "lucide-react";
 
 export default function SignupPage() {
   const [name, setName] = useState("");
@@ -53,8 +54,8 @@ export default function SignupPage() {
 
       <div className="w-full max-w-md rounded-3xl border border-white/10 bg-white/5 p-10 shadow-2xl backdrop-blur-xl">
         <div className="mb-10 text-center">
-          <Link href="/" className="mb-6 inline-block text-sm font-semibold text-indigo-400 hover:text-indigo-300">
-            &larr; Back to Home
+          <Link href="/" className="mb-6 flex items-center justify-center gap-2 text-sm font-semibold text-indigo-400 hover:text-indigo-300">
+            <ArrowLeft className="h-4 w-4" /> Back to Home
           </Link>
           <h1 className="text-4xl font-bold tracking-tight">Create Account</h1>
           <p className="mt-2 text-zinc-400">Join us today! It only takes a minute.</p>
@@ -62,7 +63,9 @@ export default function SignupPage() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-zinc-300">Full Name</label>
+            <label className="flex items-center gap-2 text-sm font-medium text-zinc-300">
+              <User className="h-4 w-4 text-zinc-500" /> Full Name
+            </label>
             <input
               type="text"
               value={name}
@@ -74,7 +77,9 @@ export default function SignupPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-zinc-300">Email Address</label>
+            <label className="flex items-center gap-2 text-sm font-medium text-zinc-300">
+              <Mail className="h-4 w-4 text-zinc-500" /> Email Address
+            </label>
             <input
               type="email"
               value={email}
@@ -86,7 +91,9 @@ export default function SignupPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-zinc-300">Password</label>
+            <label className="flex items-center gap-2 text-sm font-medium text-zinc-300">
+              <Lock className="h-4 w-4 text-zinc-500" /> Password
+            </label>
             <input
               type="password"
               value={password}
@@ -98,7 +105,9 @@ export default function SignupPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-zinc-300">Confirm Password</label>
+            <label className="flex items-center gap-2 text-sm font-medium text-zinc-300">
+              <Lock className="h-4 w-4 text-zinc-500" /> Confirm Password
+            </label>
             <input
               type="password"
               value={confirmPassword}

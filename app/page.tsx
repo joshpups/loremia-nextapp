@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Rocket, Zap, Shield, ArrowRight, LogIn } from "lucide-react";
 
 export default function Home() {
   return (
@@ -34,12 +35,12 @@ export default function Home() {
 
         <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
-            { title: "Landing Page", desc: "Premium interface with dynamic background and animations.", icon: "🎨" },
-            { title: "Auth Flow", desc: "Secure Login and Signup pages with input validation.", icon: "🔐" },
-            { title: "Git Mastery", desc: "Fully tracked and pushed to GitHub for collaboration.", icon: "🌿" },
+            { title: "Landing Page", desc: "Premium interface with dynamic background and animations.", Icon: Rocket, color: "text-blue-400" },
+            { title: "Auth Flow", desc: "Secure Login and Signup pages with input validation.", Icon: Shield, color: "text-indigo-400" },
+            { title: "Git Mastery", desc: "Fully tracked and pushed to GitHub for collaboration.", Icon: Zap, color: "text-yellow-400" },
           ].map((item, i) => (
             <div key={i} className="group relative overflow-hidden rounded-2xl border border-white/5 bg-white/[0.05] p-8 text-left transition-all hover:bg-white/[0.1] backdrop-blur-md">
-              <div className="mb-4 text-3xl">{item.icon}</div>
+              <item.Icon className={`mb-4 h-8 w-8 ${item.color}`} />
               <h3 className="mb-2 text-xl font-semibold">{item.title}</h3>
               <p className="text-zinc-400 group-hover:text-zinc-300">{item.desc}</p>
             </div>
@@ -49,15 +50,15 @@ export default function Home() {
         <div className="flex flex-col gap-4 sm:flex-row">
           <Link
             href="/signup"
-            className="flex h-12 items-center justify-center rounded-xl bg-indigo-600 px-8 font-semibold text-white transition-all hover:bg-indigo-500 hover:scale-105 active:scale-95 shadow-[0_0_15px_rgba(79,70,229,0.4)]"
+            className="flex h-12 items-center justify-center gap-2 rounded-xl bg-indigo-600 px-8 font-semibold text-white transition-all hover:bg-indigo-500 hover:scale-105 active:scale-95 shadow-[0_0_15px_rgba(79,70,229,0.4)]"
           >
-            Get Started
+            Get Started <ArrowRight className="h-4 w-4" />
           </Link>
           <Link
             href="/login"
-            className="flex h-12 items-center justify-center rounded-xl border border-white/20 bg-white/5 px-8 font-semibold transition-all hover:bg-white/10 backdrop-blur-md hover:border-white/40"
+            className="flex h-12 items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 font-semibold transition-all hover:bg-white/10 backdrop-blur-md hover:border-white/40"
           >
-            Sign In
+            Sign In <LogIn className="h-4 w-4 text-indigo-400" />
           </Link>
         </div>
       </main>

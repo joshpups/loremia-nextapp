@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { Mail, Lock, ArrowLeft } from "lucide-react";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -45,8 +46,8 @@ export default function LoginPage() {
 
       <div className="w-full max-w-md rounded-3xl border border-white/10 bg-white/5 p-10 shadow-2xl backdrop-blur-xl">
         <div className="mb-10 text-center">
-          <Link href="/" className="mb-6 inline-block text-sm font-semibold text-indigo-400 hover:text-indigo-300">
-            &larr; Back to Home
+          <Link href="/" className="mb-6 flex items-center justify-center gap-2 text-sm font-semibold text-indigo-400 hover:text-indigo-300">
+            <ArrowLeft className="h-4 w-4" /> Back to Home
           </Link>
           <h1 className="text-4xl font-bold tracking-tight">Sign In</h1>
           <p className="mt-2 text-zinc-400">Welcome back! Please enter your details.</p>
@@ -54,7 +55,9 @@ export default function LoginPage() {
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block text-sm font-medium text-zinc-300">Email Address</label>
+            <label className="flex items-center gap-2 text-sm font-medium text-zinc-300">
+              <Mail className="h-4 w-4 text-zinc-500" /> Email Address
+            </label>
             <input
               type="email"
               value={email}
@@ -66,7 +69,9 @@ export default function LoginPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-zinc-300">Password</label>
+            <label className="flex items-center gap-2 text-sm font-medium text-zinc-300">
+              <Lock className="h-4 w-4 text-zinc-500" /> Password
+            </label>
             <input
               type="password"
               value={password}
