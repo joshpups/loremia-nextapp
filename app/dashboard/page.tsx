@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { BarChart3, CheckSquare, Trophy, LogOut, Activity, ArrowLeft } from "lucide-react";
