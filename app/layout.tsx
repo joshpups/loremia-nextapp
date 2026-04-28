@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "tuyor-nextapp | Next.js Mastery",
-  description: "A premium Next.js project setup with Git and GitHub integration.",
+  title: "Loremia Next App", 
+  description: "My private gallery project",
 };
 
 export default function RootLayout({
